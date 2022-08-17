@@ -1,494 +1,62 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-html, body {
-  font-family: "Roboto", sans-serif;
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 0px 0px 15px 0px;
 }
 
-p {
-  color: #333;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
 }
 
-.app {
-  max-width: 1300px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+.games {
+    column-count: 3;
+    column-rule-style: solid;
+
 }
 
-.scorecard .grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(14, 1fr);
-  gap: 0;
-  margin: 0.5rem;
-}
-.scorecard .grid li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.scorecard .grid .label {
-  height: 25px;
-  min-width: 18px;
-  background: #333;
-  color: #fff;
-  font-size: 0.7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.scorecard .grid .v-score-label,
-.scorecard .grid .h-score-label {
-  justify-content: flex-start;
-  border-left: 1px solid black;
-  padding-left: 0.5rem;
-  min-width: 100px;
-  font-size: 0.8rem;
-}
-.scorecard .grid .v-score {
-  height: 25px;
-  background: #fff;
-  color: #333;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-}
-.scorecard .grid .h-score {
-  height: 25px;
-  background: #fff;
-  color: #333;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-}
-.scorecard .grid input {
-  width: 100%;
-  border: 0;
-  text-align: right;
+h1 {
+    font-size: 50px;
+    text-align: center;
 }
 
-.cards-wrapper {
-  margin: 2rem 0.5rem;
-  display: grid;
-  gap: 1rem;
+h2 {
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 3px solid black;
+    padding: 0px 0px 30px 0px;
 }
-@media (min-width: 650px) {
-  .cards-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
+
+h3 {
+    font-size: 15px;
+    text-align: center;
+    padding: 0px 0px 30px 0px;
+}
+
+li {
+    font-size: 14px;
+    padding: 0px 25px 0px 0px;
+    list-style: none;
+}
+
+.largeLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 20px 0px;
+    width: 400px;
   }
+
+.smallerLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
 }
 
-.action-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  gap: 1rem;
-}
-@media (min-width: 580px) {
-  .action-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.situation-cards p {
-  font-size: 0.8rem;
-  margin: 0 0 0.3rem;
-}
-.situation-cards ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.situation-cards ul li {
-  font-size: 0.8rem;
-  display: none;
-}
-.situation-cards ul li span {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-}
-@media (min-width: 450px) {
-  .situation-cards ul li span {
-    top: 1rem;
-    right: 1rem;
-  }
-}
-.situation-cards ul li.show {
-  display: block;
-}
-.situation-cards .card {
-  height: 150px;
-  width: 100px;
-  background: #fff;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  border-radius: 5px;
-}
-@media (min-width: 450px) {
-  .situation-cards .card {
-    height: 175px;
-    width: 125px;
-  }
-}
-@media (min-width: 580px) {
-  .situation-cards .card {
-    height: 200px;
-    width: 150px;
-  }
-}
-.situation-cards .card:hover {
-  cursor: pointer;
-}
-.situation-cards .card .wildcard {
-  font-size: 1.5rem;
-}
-.situation-cards .card .diamond {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 1rem;
-}
-.situation-cards .card .diamond .shape {
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
-  transform: rotate(45deg);
-  position: relative;
-  margin-bottom: 1.5rem;
-}
-.situation-cards .card .diamond .shape .dot {
-  width: 10px;
-  height: 10px;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-}
-.situation-cards .card .diamond .shape .dot.first {
-  top: -5px;
-  left: 35px;
-}
-.situation-cards .card .diamond .shape .dot.second {
-  top: -5px;
-  left: -5px;
-}
-.situation-cards .card .diamond .shape .dot.third {
-  top: 35px;
-  left: -5px;
-}
-
-.v-cards,
-.h-cards,
-.hits-cards {
-  position: relative;
-}
-.v-cards .card-result .card-suit,
-.h-cards .card-result .card-suit,
-.hits-cards .card-result .card-suit {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-}
-.v-cards .card-result .card-suit img,
-.h-cards .card-result .card-suit img,
-.hits-cards .card-result .card-suit img {
-  width: 27px;
-}
-.v-cards p,
-.h-cards p,
-.hits-cards p {
-  font-size: 0.8rem;
-  margin: 0 0 0.3rem;
-}
-.v-cards .card,
-.h-cards .card,
-.hits-cards .card {
-  height: 170px;
-  width: 109px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-image: url(https://assets.codepen.io/495197/card_back_red.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  border: 1px solid #999;
-  position: relative;
-}
-@media (min-width: 450px) {
-  .v-cards .card,
-.h-cards .card,
-.hits-cards .card {
-    height: 230px;
-    width: 150px;
-  }
-}
-@media (min-width: 580px) {
-  .v-cards .card,
-.h-cards .card,
-.hits-cards .card {
-    height: 250px;
-    width: 175px;
-  }
-}
-.v-cards .card:hover,
-.h-cards .card:hover,
-.hits-cards .card:hover {
-  cursor: pointer;
-}
-.v-cards .card.no-bg,
-.h-cards .card.no-bg,
-.hits-cards .card.no-bg {
-  background-image: url() !important;
-  border: 1px solid black;
-}
-.v-cards .card ul,
-.h-cards .card ul,
-.hits-cards .card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.v-cards .card ul li,
-.h-cards .card ul li,
-.hits-cards .card ul li {
-  font-size: 3rem;
-  display: none;
-}
-.v-cards .card ul li.show,
-.h-cards .card ul li.show,
-.hits-cards .card ul li.show {
-  display: block;
-}
-
-.left,
-.right {
-  padding: 0.5rem;
-}
-.left h2,
-.right h2 {
-  font-size: 1.2rem;
-}
-.left select,
-.right select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.lineup p {
-  margin: 0.5rem 0 1rem;
-  padding: 0 0 0.5rem;
-  border-bottom: 1px solid #ddd;
-  font-size: 0.9rem;
-}
-.lineup ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.lineup ul li {
-  display: grid;
-  grid-template-columns: 1fr 40px 40px;
-  justify-items: end;
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
-}
-.lineup ul li .star,
-.lineup ul li .power {
-  font-size: 0.7rem;
-  align-self: center;
-}
-.lineup ul li .name {
-  justify-self: start;
-}
-.lineup ul li .name:hover {
-  cursor: pointer;
-}
-
-.staff-ratings {
-  margin: 0 0 1rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.staff-ratings .team-pitching span {
-  font-weight: 700;
-}
-
-.staff {
-  margin: 1.5rem 0;
-}
-.staff p,
-.staff .team-pitching {
-  font-size: 0.9rem;
-}
-.staff p {
-  margin: 0;
-}
-.staff ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.staff ul li {
-  display: grid;
-  grid-template-columns: 1fr 40px 40px;
-  justify-items: end;
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
-}
-.staff ul li .name {
-  justify-self: start;
-}
-.staff ul li .name:hover {
-  cursor: pointer;
-}
-
-.pitcher-rating {
-  margin: 0 0 1rem;
-}
-.pitcher-rating p {
-  margin: 0 0 0.5rem;
-  margin: 0.5rem 0 1rem;
-  padding: 0 0 0.5rem;
-  border-bottom: 1px solid #ddd;
-  font-size: 0.9rem;
-}
-.pitcher-rating i.open {
-  transform: rotate(180deg);
-}
-.pitcher-rating ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-.pitcher-rating ul li {
-  width: 30px;
-  height: 30px;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pitcher-rating ul li:nth-child(2) {
-  margin: 0 0.5rem;
-}
-.pitcher-rating ul li.active {
-  border: 1px solid black;
-  pointer-events: none;
-}
-.pitcher-rating ul li:hover {
-  cursor: pointer;
-  background: #eee;
-}
-
-.center {
-  justify-self: center;
-}
-
-.footer {
-  width: 100%;
-  text-align: center;
-  /*position: absolute;*/
-  /*bottom: 0;*/
-  /*left: 50%;*/
-  /*transform: translateX(-50%);*/
-  padding: 1rem 0;
-}
-
-.team-change {
-  text-align: left;
-}
-.team-change button {
-  border: 1px solid transparent;
-  background: transparent;
-  color: red;
-  padding: 0.5rem 1rem;
-  border-radius: 3px;
-  margin-left: calc(20px + .25rem);
-  display: inline-block;
-  font-size: 0.7rem;
-}
-.team-change button:hover {
-  border: 1px solid red;
-}
-
-.game-reset {
-  text-align: right;
-}
-.game-reset button {
-  border: 1px solid transparent;
-  background: transparent;
-  color: red;
-  padding: 0.5rem 1rem;
-  border-radius: 3px;
-  margin-right: 0.5rem;
-  display: inline-block;
-  font-size: 0.7rem;
-}
-.game-reset button:hover {
-  border: 1px solid red;
-}
-
-.card-style {
-  grid-column: 1/3;
-  margin: 1rem 0 0;
-}
-.card-style ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  align-items: center;
-  justify-content: end;
-}
-.card-style ul li.choose-card-style {
-  width: 50px;
-  height: 25px;
-  border-radius: 5px;
-  border: 2px solid #eee;
-}
-.card-style ul li.choose-card-style.active {
-  border: 2px solid black;
-}
-.card-style ul li:nth-child(even) {
-  margin: 0 0.5rem;
-}
-.card-style ul li:nth-child(1) {
-  font-size: 0.8rem;
-}
-.card-style ul li:nth-child(2) {
-  background-image: url(https://assets.codepen.io/495197/oriental-tiles.png);
-  background-size: cover;
-  background-position: center;
-}
-.card-style ul li:nth-child(3) {
-  background-image: url(https://assets.codepen.io/495197/card_back_blue_alt.png);
-  background-size: cover;
-  background-position: center;
-}
-.card-style ul li:nth-child(4) {
-  background-image: url(https://assets.codepen.io/495197/card_back_red.png);
-  background-size: cover;
-  background-position: center;
-}
-.card-style ul li:hover {
-  cursor: pointer;
+.inProgress {
+    color: green;
 }
