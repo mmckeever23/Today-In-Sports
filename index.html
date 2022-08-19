@@ -5,26 +5,32 @@
   <meta charset="UTF-8">
   <title>Today in MLB</title>
   <script src="script.js"></script>
+  <script src="lib/moment/moment.min.js"></script>
   <link rel="stylesheet" href="./style.css">  
 </head>
 
 <body>
     <h1> Today in Major League Baseball </h1>
-    <h3 id="demo"></h3>
+    <div id="game-time"></div>
     <img src="Images/mlbLogo.png" class="largeLogo">
+    <h2 class="clock" id="date"></h2>
     <div id="active-games"></div>
+
     <div class="grid-container">
-      <div class="item1" id="games-today">
+      <div class="item1">
         <img src="Images/nlLogo.png" class="smallerLogo">
         <h3>National League</h3>
+          <div id="games-list1"></div>
       </div>
       <div class="item2">
         <img src="Images/alLogo.png" class="smallerLogo">
         <h3>American League</h3>
+          <div id="games-list2"></div>
       </div>
       <div class="item3">
         <img src="Images/ilLogo.gif" class="smallerLogo">
         <h3>Interleague</h3>
+          <div id="games-list3"></div>
       </div>   
     </div>
 </body>
