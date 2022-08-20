@@ -2,7 +2,6 @@ body {
     font-family: "Roboto", sans-serif;
     border: 3px solid black;
     border-radius: 10px;
-    padding: 0px 0px 15px 0px;
 }
 
 .grid-container {
@@ -12,13 +11,23 @@ body {
 
 h1 {
     font-size: 40px;
+    color: rgb(4, 30, 66);
+    background-color: lightgrey;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    padding: 10px;
+    width: 45%;
+    border-radius: 10px;
+
 }
 
 h4 {
     font-size: 20px;
     text-align: center;
     border-bottom: 3px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 0px 0px 30px 0px;
 }
 
@@ -52,14 +61,14 @@ li {
   }
 
 .smallerLogo {
-    background-color: lightgrey;
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 100px;
     width: 100px;
-    padding: 10px;
     border-radius: 10px;
+    background-color: lightgrey;
+    padding: 10px;
 }
 
 p {
@@ -70,10 +79,11 @@ p {
     text-align: center;
     padding: 10px;
     border-radius: 10px;
+    line-height: 20px;
 }
 
 .clock {
-    background-color: red;
+    background-color: rgb(187, 0, 33);
     color: white;
     margin:auto;
     width: 349px;
@@ -85,7 +95,7 @@ h5 {
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     border-bottom: 1px solid black;
     padding: 0px 0px 20px 0px;
     margin-bottom: 30px;
@@ -97,6 +107,6 @@ h5 {
 
 }
 
-.item2 {
-    border-right: 1px solid black;
+.item3 {
+    border-left: 1px solid black;
 }
