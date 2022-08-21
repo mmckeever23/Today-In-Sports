@@ -19,6 +19,7 @@ h1 {
     padding: 10px;
     width: 45%;
     border-radius: 10px;
+    margin-bottom: 20px;
 
 }
 
@@ -43,7 +44,7 @@ h3 {
     padding: 0px 0px 30px 0px;
     border-bottom: 1px solid black;
     padding: 0px 0px 20px 0px;
-    margin-bottom: 30px;
+    margin-bottom: -2px;
 }
 
 li {
@@ -86,6 +87,7 @@ p {
     background-color: rgb(187, 0, 33);
     color: white;
     margin:auto;
+    margin-top: -2px;
     width: 329px;
     padding: 10px;
     border-radius: 10px;
