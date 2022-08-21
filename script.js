@@ -47,25 +47,18 @@ window.addEventListener("load", function() {
                         <b><span style="color: rgb(0, 230, 0)">${data.games[i].status.detailedState}</span><br>
                         ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                         `;
-                    } else if (data.games[i].status.detailedState == "Game Over") {
-                        gamesList1.innerHTML += `
-                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
-                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>     
-                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
-                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
-                        `;
-                    } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.away.isWinner == true) {
+                    } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.away.isWinner == true) {
                         gamesList1.innerHTML += `   
                         <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                         Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        <b><span style="color: blue">Final</span><br>
                         ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <span style="text-transform:uppercase">${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</span></b></p>
                         `;
-                    } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                    } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
                         gamesList1.innerHTML += `
                         <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                         Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        <b><span style="color: blue">Final</span><br>
                         <span style="text-transform:uppercase">${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}</span>, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                         `;
                     };
@@ -85,25 +78,18 @@ window.addEventListener("load", function() {
                         <b><span style="color: rgb(0, 230, 0)">${data.games[i].status.detailedState}</span><br>
                         ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                         `;
-                    } else if (data.games[i].status.detailedState == "Game Over") {
-                        gamesList2.innerHTML += `
-                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
-                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>     
-                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
-                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
-                        `;
-                    } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.away.isWinner == true) {
+                    } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.away.isWinner == true) {
                         gamesList2.innerHTML += `   
                         <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                         Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        <b><span style="color: blue">Final</span><br>
                         ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <span style="text-transform:uppercase">${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</span></b></p>
                         `;
-                    } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                    } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
                         gamesList2.innerHTML += `
                         <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                         Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        <b><span style="color: blue">Final</span><br>
                         <span style="text-transform:uppercase">${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}</span>, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                         `;
                     };
@@ -123,25 +109,18 @@ window.addEventListener("load", function() {
                     <b><span style="color: rgb(0, 230, 0)">${data.games[i].status.detailedState}</span><br>
                     ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                     `;
-                } else if (data.games[i].status.detailedState == "Game Over") {
-                    gamesList3.innerHTML += `
-                    <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
-                    Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>     
-                    <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
-                    ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
-                    `;
-                } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.away.isWinner == true) {
+                } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.away.isWinner == true) {
                     gamesList3.innerHTML += `   
                     <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                     Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                    <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                    <b><span style="color: blue">Final</span><br>
                     ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <span style="text-transform:uppercase">${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</span></b></p>
                     `;
-                } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
                     gamesList3.innerHTML += `
                     <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                     Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                    <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                    <b><span style="color: blue">Final</span><br>
                     <span style="text-transform:uppercase">${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}</span>, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                     `;
                 };
