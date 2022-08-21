@@ -1,7 +1,11 @@
+// Date Line
+
 window.onload = function() {
-let d = moment().format('LLLL');
+let d = moment().format('dddd, MMMM Do, Y');
 document.getElementById("date").innerHTML = d;
 };
+
+// Active Games Line
 
 window.addEventListener("load", function() {
     fetch("http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1").then(function(response) {
@@ -14,12 +18,14 @@ window.addEventListener("load", function() {
     });
 });
 
+// Box Scores (uncategorized)
+
 window.addEventListener("load", function() {
     let gamesList = document.getElementById('games-list1')
     fetch("http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1").then(function(response) {
         response.json().then(function(json) {
             let data = json.dates[0];
-            for(let i = 0; i<16; i++) {
+            for(let i = 0; i<data.games.length; i++) {
                 const dateToTime = date => date.toLocaleString('en-US', {
                     hour: 'numeric',
                     minute: 'numeric'
@@ -27,47 +33,75 @@ window.addEventListener("load", function() {
                 const dateString = json.dates[0].games[i].gameDate;
                 const localDate = new Date(dateString);
 
-                gamesList.innerHTML += `      
-                <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
-                Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series at ${json.dates[0].games[i].venue.name}</p>
-                    `;
-                    if (data.games[i].status.detailedState.includes("Scheduled") == true) {
+                gamesList.innerHTML += ``      
+                    if (data.games[i].status.detailedState == "Scheduled" || data.games[i].status.detailedState == "Pre-Game" || data.games[i].status.detailedState == "Warmup"){
                         gamesList.innerHTML += `   
-                        <h5><span style="color: red">${data.games[i].status.detailedState}</span><br>
-                        Game begins at ${dateToTime(localDate)}</h5>
+                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
+                        <b><span style="color: red">${data.games[i].status.detailedState}</span><br>
+                        Game begins at ${dateToTime(localDate)}</b></p>
                         `;
-                    } else if (data.games[i].status.detailedState.includes("Pre-Game") == true) {
-                        gamesList.innerHTML += `   
-                        <h5><span style="color: red">${data.games[i].status.detailedState}</span><br>
-                        Game begins at ${dateToTime(localDate)}</h5>
+                    } else if (data.games[i].status.detailedState == "In Progress") {
+                        gamesList.innerHTML += ` 
+                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
+                        <b><span style="color: rgb(0, 230, 0)">${data.games[i].status.detailedState}</span><br>
+                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                         `;
-                    } else if (data.games[i].status.detailedState.includes("Warmup") == true) {
-                        gamesList.innerHTML += `   
-                        <h5><span style="color: red">${data.games[i].status.detailedState}</span><br>
-                        Game begins at ${dateToTime(localDate)}</h5>
-                        `;
-                    } else if (data.games[i].status.detailedState.includes("In Progress") == true) {
-                        gamesList.innerHTML += `   
-                        <h5><span style="color: rgb(0, 230, 0)">${data.games[i].status.detailedState}</span><br>
-                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</h5>
-                        `;
-                    } else if (data.games[i].status.detailedState.includes("Game Over") == true) {
-                        gamesList.innerHTML += `   
-                        <h5><span style="color: blue">${data.games[i].status.detailedState}</span><br>
-                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</h5>
-                        `;
-                    } else if (data.games[i].status.detailedState.includes("Final") == true && data.games[i].teams.away.isWinner == true) {
-                        gamesList.innerHTML += `   
-                        <h5><span style="color: blue">${data.games[i].status.detailedState}</span><br>
-                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}<span style="text-transform:uppercase">${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</span></h5>
-                        `;
-                    } else if (data.games[i].status.detailedState.includes("Final") == true && data.games[i].teams.home.isWinner == true) {
+                    } else if (data.games[i].status.detailedState == "Game Over") {
                         gamesList.innerHTML += `
-                        <h5><span style="color: blue">${data.games[i].status.detailedState}</span><br>
-                        <span style="text-transform:uppercase">${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}</span>, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</h5>
+                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>     
+                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                         `;
-                    }
+                    } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.away.isWinner == true) {
+                        gamesList.innerHTML += `   
+                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
+                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <span style="text-transform:uppercase">${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</span></b></p>
+                        `;
+                    } else if (data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                        gamesList.innerHTML += `
+                        <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                        Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
+                        <b><span style="color: blue">${data.games[i].status.detailedState}</span><br>
+                        <span style="text-transform:uppercase">${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}</span>, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
+                        `;
+                    };
                 };  
             });
         });
     });
+
+// Box Scores (categorized, but without game status)
+
+// window.addEventListener("load", function() {
+//     let gamesList1 = document.getElementById('games-list1')
+//     let gamesList2 = document.getElementById('games-list2')
+//     let gamesList3 = document.getElementById('games-list3')
+//     fetch("http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1").then(function(response) {
+//         response.json().then(function(json) {
+//             let data = json.dates[0];
+//             for(let i = 0; i<data.games.length; i++) {
+//                 if ((data.games[i].teams.home.team.name == "Arizona Diamondbacks" || data.games[i].teams.home.team.name == "Atlanta Braves" || data.games[i].teams.home.team.name == "Chicago Cubs" || data.games[i].teams.home.team.name == "Cincinnati Reds" || data.games[i].teams.home.team.name == "Colorado Rockies" || data.games[i].teams.home.team.name == "Los Angeles Dodgers" || data.games[i].teams.home.team.name == "Miami Marlins" || data.games[i].teams.home.team.name == "Milwaukee Brewers" || data.games[i].teams.home.team.name == "New York Mets" || data.games[i].teams.home.team.name == "Philadelphia Phillies" || data.games[i].teams.home.team.name == "Pittsburgh Pirates" || data.games[i].teams.home.team.name == "San Diego Padres" || data.games[i].teams.home.team.name == "San Francisco Giants" || data.games[i].teams.home.team.name == "St. Louis Cardinals" || data.games[i].teams.home.team.name == "Washington Nationals") && (data.games[i].teams.away.team.name == "Arizona Diamondbacks" || data.games[i].teams.away.team.name == "Atlanta Braves" || data.games[i].teams.away.team.name == "Chicago Cubs" || data.games[i].teams.away.team.name == "Cincinnati Reds" || data.games[i].teams.away.team.name == "Colorado Rockies" || data.games[i].teams.away.team.name == "Los Angeles Dodgers" || data.games[i].teams.away.team.name == "Miami Marlins" || data.games[i].teams.away.team.name == "Milwaukee Brewers" || data.games[i].teams.away.team.name == "New York Mets" || data.games[i].teams.away.team.name == "Philadelphia Phillies" || data.games[i].teams.away.team.name == "Pittsburgh Pirates" || data.games[i].teams.home.team.name == "San Diego Padres" || data.games[i].teams.away.team.name == "San Francisco Giants" || data.games[i].teams.away.team.name == "St. Louis Cardinals" || data.games[i].teams.away.team.name == "Washington Nationals")) {
+//                     gamesList1.innerHTML += ` 
+//                     <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+//                     Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}</p>
+//                         `;
+//                 } else if ((data.games[i].teams.home.team.name == "Baltimore Orioles" || data.games[i].teams.home.team.name == "Boston Red Sox" || data.games[i].teams.home.team.name == "Chicago White Sox" || data.games[i].teams.home.team.name == "Cleveland Guardians" || data.games[i].teams.home.team.name == "Detroit Tigers" || data.games[i].teams.home.team.name == "Houston Astros" || data.games[i].teams.home.team.name == "Kansas City Royals" || data.games[i].teams.home.team.name == "Los Angeles Angels" || data.games[i].teams.home.team.name == "Minnesota Twins" || data.games[i].teams.home.team.name == "New York Yankees" || data.games[i].teams.home.team.name == "Oakland Athletics" || data.games[i].teams.home.team.name == "Seattle Mariners" || data.games[i].teams.home.team.name == "Tampa Bay Rays" || data.games[i].teams.home.team.name == "Texas Rangers" || data.games[i].teams.home.team.name == "Toronto Blue Jays") && (data.games[i].teams.away.team.name == "Baltimore Orioles" || data.games[i].teams.away.team.name == "Boston Red Sox" || data.games[i].teams.away.team.name == "Chicago White Sox" || data.games[i].teams.away.team.name == "Cleveland Guardians" || data.games[i].teams.away.team.name == "Detroit Tigers" || data.games[i].teams.away.team.name == "Houston Astros" || data.games[i].teams.away.team.name == "Kansas City Royals" || data.games[i].teams.away.team.name == "Los Angeles Angels" || data.games[i].teams.away.team.name == "Minnesota Twins" || data.games[i].teams.away.team.name == "New York Yankees" || data.games[i].teams.away.team.name == "Oakland Athletics" || data.games[i].teams.away.team.name == "Seattle Mariners" || data.games[i].teams.away.team.name == "Tampa Bay Rays" || data.games[i].teams.away.team.name == "Texas Rangers" || data.games[i].teams.away.team.name == "Toronto Blue Jays")) {
+//                     gamesList2.innerHTML += ` 
+//                     <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+//                     Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}</p>
+//                     `;
+//                 } else {
+//                     gamesList3.innerHTML += ` 
+//                     <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+//                     Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}</p>
+//                     `;
+//                 };
+//             };
+//         });
+//     });
+// });

@@ -57,15 +57,15 @@ li {
     margin-left: auto;
     margin-right: auto;
     padding: 0px 0px 25px 0px;
-    width: 370px;
+    width: 350px;
   }
 
 .smallerLogo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     border-radius: 10px;
     background-color: lightgrey;
     padding: 10px;
@@ -86,7 +86,7 @@ p {
     background-color: rgb(187, 0, 33);
     color: white;
     margin:auto;
-    width: 349px;
+    width: 329px;
     padding: 10px;
     border-radius: 10px;
 }
