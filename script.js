@@ -39,11 +39,18 @@ window.addEventListener("load", function() {
                             <b>STARTING SOON</b><br>
                             Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}</p>
                             `;
+                        } else if (data.games[i].status.detailedState == "Delayed Start") {
+                            gamesList1.innerHTML += `   
+                            <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                            Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
+                            <b>DELAYED START</b><br>
+                            ${data.games[i].status.reason}</p>
+                            `;
                         } else if (data.games[i].status.detailedState == "In Progress") {
                             gamesList1.innerHTML += ` 
                             <p class="p-green"><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                            <b>IN PROGRESS</b<<br>
+                            <b>IN PROGRESS</b><br>
                             ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</p>
                             `;
                         } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.away.isWinner == true) {
@@ -77,6 +84,13 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>STARTING SOON</b><br>
                             Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}</p>
+                            `;
+                        } else if (data.games[i].status.detailedState == "Delayed Start") {
+                            gamesList1.innerHTML += `   
+                            <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                            Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
+                            <b>DELAYED START</b><br>
+                            ${data.games[i].status.reason}</p>
                             `;
                         } else if (data.games[i].status.detailedState == "In Progress") {
                             gamesList2.innerHTML += ` 
@@ -117,12 +131,19 @@ window.addEventListener("load", function() {
                             <b>STARTING SOON</b><br>
                             Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}</p>
                             `;
+                        } else if (data.games[i].status.detailedState == "Delayed Start") {
+                            gamesList1.innerHTML += `   
+                            <p><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
+                            Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
+                            <b>DELAYED START</b><br>
+                            ${data.games[i].status.reason}</p>
+                            `;
                         } else if (data.games[i].status.detailedState == "In Progress") {
                             gamesList3.innerHTML += ` 
                             <p class="p-green"><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
-                            <b>IN PROGRESS<br>
-                            ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
+                            <b>IN PROGRESS</b><br>
+                            ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, ${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</p>
                             `;
                         } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.away.isWinner == true) {
                             gamesList3.innerHTML += `   
