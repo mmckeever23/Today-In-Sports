@@ -141,9 +141,12 @@ h5 {
 
 .pprLogo {
     display: block;
-    margin: 10px auto 5px auto;
-    height: 100px;
-    width: 120px;
+    margin: 15px auto 5px auto;
+    height: 80px;
+    width: auto;
+    border-radius: 8px;
+    background-color: lightgrey;
+    padding: 10px;
 }
 
 table {
