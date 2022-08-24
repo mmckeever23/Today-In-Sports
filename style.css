@@ -13,14 +13,11 @@ h1 {
     font-size: 35px;
     color: rgb(4, 30, 66);
     background-color: lightgrey;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 10px auto;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     width: 550px;
     border-radius: 8px;
-    margin-bottom: 20px;
-    margin-top: 15px;
 
 }
 
@@ -28,10 +25,8 @@ h4 {
     font-size: 20px;
     text-align: center;
     border-bottom: 3px solid black;
-    margin-left: 20px;
-    margin-right: 20px;
     margin-bottom: 22px;
-    padding: 0px 0px 30px 0px;
+    padding: 0px 0px 20px 0px;
     line-height: 0px;
 }
 
@@ -44,10 +39,8 @@ h2 {
 h3 {
     font-size: 18px;
     text-align: center;
-    padding: 0px 0px 30px 0px;
-    border-bottom: 1px solid black;
-    padding: 0px 0px 20px 0px;
-    margin-bottom: -2px;
+    padding: 0px 0px 10px 0px;
+    margin-bottom: -15px;
     line-height: 15px;
 }
 
@@ -61,14 +54,13 @@ li {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px 0px 25px 0px;
+    padding: 0px 0px 15px 0px;
     width: 300px;
   }
 
 .smallerLogo {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: -10px auto -10px auto;
     height: 80px;
     width: 80px;
     border-radius: 8px;
@@ -80,6 +72,16 @@ p {
     font-size: 14px;
     background-color: lightgrey;
     margin: 15px 15px 15px 15px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+    line-height: 20px;
+}
+
+.p-foot {
+    font-size: 14px;
+    background-color: lightgrey;
+    margin: 0px 15px 15px 15px;
     text-align: center;
     padding: 5px;
     border-radius: 8px;
@@ -129,8 +131,7 @@ p {
 .clock {
     background-color: rgb(187, 0, 33);
     color: white;
-    margin:auto;
-    margin-top: -6px;
+    margin: -6px auto -5px auto;
     width: 329px;
     padding: 10px;
     border-radius: 8px;
@@ -145,15 +146,6 @@ h5 {
     padding: 0px 0px 20px 0px;
     margin-bottom: 30px;
     line-height: 20px;
-}
-
-.item1 {
-    border-right: 1px solid black;
-
-}
-
-.item3 {
-    border-left: 1px solid black;
 }
 
 .pprLogo {
@@ -183,3 +175,11 @@ table {
     text-align: center;
     width: 25px;
   }
+
+.item1 {
+    margin-right: -13px;
+}
+
+.item3 {
+    margin-left: -13px;
+}

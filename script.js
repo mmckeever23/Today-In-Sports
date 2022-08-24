@@ -31,12 +31,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>UPCOMING</b> - Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -47,12 +47,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>STARTING SOON</b> - Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid rgb(255, 153, 153)">
+                                    <td class="tdName" style="border: 4px solid rgb(255, 153, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid rgb(255, 153, 153)">
+                                    <td class="tdName" style="border: 4px solid rgb(255, 153, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -63,12 +63,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>DELAYED START</b> - ${data.games[i].status.reason}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -131,12 +131,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>UPCOMING</b> - Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -147,12 +147,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>STARTING SOON</b> - Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid rgb(255, 153, 153)">
+                                    <td class="tdName" style="border: 4px solid rgb(255, 153, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid rgb(255, 153, 153)">
+                                    <td class="tdName" style="border: 4px solid rgb(255, 153, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -163,12 +163,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>DELAYED START</b> - ${data.games[i].status.reason}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -231,12 +231,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>UPCOMING</b> - Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -247,12 +247,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>STARTING SOON</b> - Game begins to${data.games[i].dayNight} at ${dateToTime(localDate)}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid rgb(255, 153, 153)">
+                                    <td class="tdName" style="border: 4px solid rgb(255, 153, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid rgb(255, 153, 153)">
+                                    <td class="tdName" style="border: 4px solid rgb(255, 153, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
@@ -263,12 +263,12 @@ window.addEventListener("load", function() {
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>
                             <b>DELAYED START</b> - ${data.games[i].status.reason}
                             <table> 
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.away.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.away.team.name}</td>
                                     <td class="tdScore"><b></b></td>
                                 </tr>
-                                <tr style="border: 5px solid rgb(153, 255, 153)">
-                                    <td class="tdName" style="border: 4px solid rgb(153, 255, 153)">${json.dates[0].games[i].teams.home.team.name}</td>
+                                <tr style="border: 5px solid lightgrey">
+                                    <td class="tdName" style="border: 4px solid lightgrey">${json.dates[0].games[i].teams.home.team.name}</td>
                                     <td class="tdScore"></td>
                                 </tr>
                             </table></div>
