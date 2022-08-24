@@ -60,7 +60,7 @@ window.addEventListener("load", function() {
                             <b>FINAL</b><br>
                             ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <b>${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                             `;
-                        } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                        } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.home.isWinner == true) {
                             gamesList1.innerHTML += `
                             <p class="p-blue"><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
@@ -106,7 +106,7 @@ window.addEventListener("load", function() {
                             <b>FINAL</b><br>
                             ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <b>${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                             `;
-                        } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                        } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.home.isWinner == true) {
                             gamesList2.innerHTML += `
                             <p class="p-blue"><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
@@ -152,7 +152,7 @@ window.addEventListener("load", function() {
                             <b>FINAL</b><br>
                             ${json.dates[0].games[i].teams.home.team.name} - ${json.dates[0].games[i].teams.home.score}, <b>${json.dates[0].games[i].teams.away.team.name} - ${json.dates[0].games[i].teams.away.score}</b></p>
                             `;
-                        } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].status.detailedState == "Final" && data.games[i].teams.home.isWinner == true) {
+                        } else if ((data.games[i].status.detailedState == "Game Over" || data.games[i].status.detailedState == "Final") && data.games[i].teams.home.isWinner == true) {
                             gamesList3.innerHTML += `
                             <p class="p-blue"><b>${data.games[i].teams.home.team.name}</b> <i>(${json.dates[0].games[i].teams.home.leagueRecord.wins}-${json.dates[0].games[i].teams.home.leagueRecord.losses})</i> vs. <b>${json.dates[0].games[i].teams.away.team.name}</b> <i>(${json.dates[0].games[i].teams.away.leagueRecord.wins}-${json.dates[0].games[i].teams.away.leagueRecord.losses})</i><br>
                             Game ${data.games[i].seriesGameNumber} of a ${json.dates[0].games[i].gamesInSeries}-game series @ ${json.dates[0].games[i].venue.name}<br>  
