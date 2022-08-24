@@ -10,23 +10,18 @@ body {
 }
 
 h1 {
-    font-size: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 83px;
     color: rgb(4, 30, 66);
-    background-color: lightgrey;
-    margin: 10px auto 10px auto;
-    text-align: center;
-    padding: 12px;
-    width: 550px;
-    border-radius: 8px;
-
+    padding: 13px;
 }
 
 h4 {
     font-size: 20px;
     text-align: center;
     border-bottom: 3px solid black;
-    margin-bottom: 22px;
-    padding: 0px 0px 20px 0px;
+    margin: 24px 15px 24px 15px;
+    padding: 0px 0px 24px 0px;
     line-height: 0px;
 }
 
@@ -51,11 +46,9 @@ li {
 }
 
 .largeLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px 0px 15px 0px;
     width: 300px;
+    margin-top: 3px;
+    margin-left: 6px;
   }
 
 .smallerLogo {
@@ -80,12 +73,10 @@ p {
 
 .p-foot {
     font-size: 14px;
-    background-color: lightgrey;
     margin: 0px 15px 15px 15px;
     text-align: center;
-    padding: 5px;
-    border-radius: 8px;
     line-height: 20px;
+    border-top: 3px solid black;
 }
 
 .p-grey {
@@ -131,7 +122,7 @@ p {
 .clock {
     background-color: rgb(187, 0, 33);
     color: white;
-    margin: -6px auto -5px auto;
+    margin: 2px auto 0px auto;
     width: 329px;
     padding: 10px;
     border-radius: 8px;
@@ -150,8 +141,7 @@ h5 {
 
 .pprLogo {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 5px auto;
     height: 100px;
     width: 120px;
 }
