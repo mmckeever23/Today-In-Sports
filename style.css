@@ -119,6 +119,7 @@ p {
     line-height: 20px; 
 }
 
+
 .clock {
     background-color: rgb(187, 0, 33);
     color: white;
@@ -159,7 +160,7 @@ table {
     border-collapse: collapse;
     background-color: white;
     padding-left: 5px;
-    width: 200px;
+    width: 210px;
   }
 
 .tdScore {
@@ -167,6 +168,7 @@ table {
     background-color: white;
     text-align: center;
     width: 30px;
+    font-weight: bold;
   }
 
 .item1 {
@@ -175,4 +177,9 @@ table {
 
 .item3 {
     margin-left: -13px;
+}
+
+.record {
+    font-size: 12px;
+    font-style: italic;
 }
