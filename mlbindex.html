@@ -4,15 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="60" />
+  <nav>
+    <ul>
+      <li><a href="mlbindex.html">Today in MLB</a></li>
+      <li><a href="nhlindex.html">Today in NHL</a></li>
+    </ul>
+    <h2 class="clock" id="date"></h2>
+  </nav>
   <title>Today in MLB</title>
-  <script src="script.js"></script>
+  <script src="mlbscript.js"></script>
   <script src="lib/moment/moment.min.js"></script>
   <link rel="stylesheet" href="./style.css">  
 </head>
 
 <body>
-    <div style="text-align: center"><h1 style="vertical-align:middle; display:inline;">TODAY IN</h1><img style="vertical-align: middle" src="Images/mlbLogo.png" class="largeLogo"></div>
-    <h2 class="clock" id="date"></h2>
+    <div style="text-align: center"><h1 class="mlb" style="vertical-align:middle; display:inline;">TODAY IN</h1><img style="vertical-align: middle" src="Images/mlbLogo.png" class="largeLogo"></div>
     <div id="active-games"></div>
 
     <div class="grid-container">

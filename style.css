@@ -9,12 +9,21 @@ body {
     grid-template-columns: auto auto auto;
 }
 
-h1 {
+.mlb {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 84px;
     color: rgb(4, 30, 66);
     padding: 13px;
 }
+
+.nhl {
+    font-family: 'Franklin Gothic Medium', Arial;
+    font-size: 84px;
+    font-style: italic;
+    color: black;
+    padding: 13px;
+}
+
 
 h4 {
     font-size: 20px;
@@ -35,7 +44,7 @@ h3 {
     font-size: 18px;
     text-align: center;
     padding: 0px 0px 10px 0px;
-    margin-bottom: -15px;
+    margin-bottom: 0px;
     line-height: 15px;
 }
 
@@ -46,7 +55,7 @@ li {
 }
 
 .largeLogo {
-    width: 300px;
+    height: 60px;
     margin-top: 3px;
     margin-left: 6px;
   }
@@ -121,11 +130,14 @@ p {
 
 
 .clock {
+    display: inline-block;
     background-color: rgb(187, 0, 33);
     color: white;
-    margin: 2px auto 0px auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    padding: 16px;
+    margin: 15px 15px 0px 15px;
     width: 329px;
-    padding: 10px;
     border-radius: 8px;
 }
 
@@ -182,4 +194,36 @@ table {
 .record {
     font-size: 12px;
     font-style: italic;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 15px 15px 0px 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: lightgrey;
+    width: 329px;
+    border-radius: 8px;
+}
+
+nav ul li {
+    display: inline;
+    border-right: 3px solid black;
+    font-size: 20px;
+    padding-right: 16px;
+    padding-left: 8px;
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
 }
