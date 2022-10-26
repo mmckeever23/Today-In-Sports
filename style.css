@@ -16,11 +16,17 @@ body {
     padding: 13px;
 }
 
+@font-face {
+    font-family: nhlfont;
+    src: url(fonts/nhl.ttf);
+}
+
 .nhl {
-    font-family: 'Franklin Gothic Medium', Arial;
-    font-size: 84px;
-    font-style: italic;
-    color: black;
+    font-family: nhlfont;
+    font-weight:500;
+    color:black;
+    letter-spacing: 3px;
+    font-size: 96px;
     padding: 13px;
 }
 
