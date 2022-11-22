@@ -4,46 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="60" />
+  <meta http-equiv="refresh" content="60" />
   <nav>
     <ul>
       <li><a href="mlbindex.html">Today in MLB</a></li>
       <li><a href="nhlindex.html">Today in NHL</a></li>
     </ul>
+    <div class="heading" style="display: inline" id="date"></div>
   </nav>
-  <title>Today in NHL</title>
+  <title>Today in Sports - NHL</title>
   <script src="nhlscript.js"></script>
   <script src="lib/moment/moment.min.js"></script>
   <link rel="stylesheet" href="./style.css">  
 </head>
 
 <body>
-    <div style="text-align: center"><h1 class="nhl" style="vertical-align:middle; display:inline;">TODAY IN  </h1><img style="vertical-align: middle" src="Images/nhlLogo.png" class="largeLogo"></div>
-    <h2 class="clock" id="date"></h2>
+  <div style="text-align:center">
+      <img src="Images/nhlLogo.png" class="largeLogo"><br>
+    </div>
+
+    
     <div id="active-games"></div>
 
     <div class="grid-container">
       <div class="item1">
-        <img src="Images/nlLogo.png" class="smallerLogo">
-        <h3>National League</h3>
+        <img src="Images/westernLogo.png" class="smallerLogo">
+        <h3>Western Conference</h3>
           <div id="games-list1"></div>
       </div>
       <div class="item2">
-        <img src="Images/alLogo.png" class="smallerLogo">
-        <h3>American League</h3>
+        <img src="Images/easternLogo.png" class="smallerLogo">
+        <h3>Eastern Conference</h3>
           <div id="games-list2"></div>
       </div>
       <div class="item3">
-        <img src="Images/ilLogo.gif" class="smallerLogo">
-        <h3>Interleague</h3>
+        <img src="Images/icLogo.png" class="smallerLogo">
+        <h3>Interconference</h3>
           <div id="games-list3"></div>
       </div>   
     </div>
 </body>
 
 <footer>
-    <div class="p-foot" style="color: rgb(4, 30, 66)"><img src="Images/pprLogo.png" class="pprLogo">
-    <b>Designed by Matt McKeever & Powered by <a href="https://pocketpennantrun.weebly.com/">Pocket Pennant Run</a></b><br>
-  <span style="font-size:11px">&#xA9; 2022 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here: <a href="http://gdx.mlb.com/components/copyright.txt">http://gdx.mlb.com/components/copyright.txt</a></span></div>
+  <div style="text-align:center">
+    <b>Designed by Matt McKeever</b><br>
+    <div class="p-foot"> 2022 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here: <a href="http://gdx.mlb.com/components/copyright.txt">http://gdx.mlb.com/components/copyright.txt</div>
+  </div>
 </footer>
 
 </html>

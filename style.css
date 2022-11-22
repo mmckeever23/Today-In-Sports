@@ -9,25 +9,9 @@ body {
     grid-template-columns: auto auto auto;
 }
 
-.mlb {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 84px;
-    color: rgb(4, 30, 66);
-    padding: 13px;
-}
-
 @font-face {
     font-family: nhlfont;
     src: url(fonts/nhl.ttf);
-}
-
-.nhl {
-    font-family: nhlfont;
-    font-weight:500;
-    color:black;
-    letter-spacing: 3px;
-    font-size: 96px;
-    padding: 13px;
 }
 
 
@@ -62,8 +46,9 @@ li {
 
 .largeLogo {
     height: 60px;
-    margin-top: 3px;
+    margin-top: 20px;
     margin-left: 6px;
+    vertical-align: middle;
   }
 
 .smallerLogo {
@@ -87,11 +72,10 @@ p {
 }
 
 .p-foot {
-    font-size: 14px;
-    margin: 0px 15px 15px 15px;
+    font-size: 11px;
     text-align: center;
-    line-height: 20px;
-    border-top: 3px solid black;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .p-grey {
@@ -136,15 +120,18 @@ p {
 
 
 .clock {
-    display: inline-block;
-    background-color: rgb(187, 0, 33);
+    display: block;
+    background-color: black;
     color: white;
-    font-family: "Roboto", sans-serif;
     font-weight: bold;
+    font-size: 20px;
     padding: 16px;
-    margin: 15px 15px 0px 15px;
-    width: 329px;
+    margin: 15px auto 15px auto;
+    width: 350px;
     border-radius: 8px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 h5 {
@@ -158,15 +145,6 @@ h5 {
     line-height: 20px;
 }
 
-.pprLogo {
-    display: block;
-    margin: 15px auto 5px auto;
-    height: 80px;
-    width: auto;
-    border-radius: 8px;
-    background-color: lightgrey;
-    padding: 10px;
-}
 
 table {
     border-collapse: collapse;
@@ -232,4 +210,16 @@ nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 20px;
+}
+
+.heading {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 16px;
+    width: 350px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
