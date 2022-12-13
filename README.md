@@ -1,6 +1,8 @@
 # Today In Sports
 Using skills learned in LaunchCode's LC101 course to create a sports scoreboard.
 
+### WORK IN PROGRESS
+
 ### Overview
 - Today is Sports is a scoreboard application for viewing current scores and upcoming Major League Baseball and National Hockey League Games.
 - This is a personal project used to practice skills learned in LC101
