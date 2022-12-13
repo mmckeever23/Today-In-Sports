@@ -1,4 +1,4 @@
-# Today-In-Sports
+# Today In Sports
 Using skills learned in LaunchCode's LC101 course to create a sports scoreboard.
 
 ###Overview
